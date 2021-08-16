@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=myjobs
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysqldata:/var/lib/mysql
+    networks:
+      - db-network
+
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+    networks:
+      - db-network
+
+volumes:
+  mysqldata:
+
+networks: 
+  db-network:
+    driver: bridge
