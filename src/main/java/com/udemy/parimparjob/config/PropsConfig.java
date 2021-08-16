@@ -11,7 +11,7 @@ public class PropsConfig {
   @Bean
   public PropertySourcesPlaceholderConfigurer config() {
     PropertySourcesPlaceholderConfigurer configurer = new PropertySourcesPlaceholderConfigurer();
-    configurer.setLocation(new FileSystemResource("/etc/config/parimparjob/application.yml"));
+    configurer.setLocation(new FileSystemResource("/etc/config/parimparjob/application.properties"));
     return configurer;
   }
 }
