@@ -1,5 +1,5 @@
 start:
-	@ ./mvnw spring-boot:run
+	@ export $$(cat .env | xargs) && ./mvnw spring-boot:run
 
 start-db:
 	@ docker-compose up -d

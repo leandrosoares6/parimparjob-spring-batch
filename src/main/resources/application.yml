@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/myjobs
-    username: root
-    password: root
+    url: jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}
+    username: ${DB_USER}
+    password: ${DB_PASS}
   jpa:
     hibernate:
       ddl-auto: create
