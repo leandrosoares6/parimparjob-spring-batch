@@ -1,4 +1,10 @@
-start:
+CONFIG_DIR = /etc/config/parimparjob
+CONFIG_FILE = $(CONFIG_DIR)/application.yml
+
+configure:
+	@ [ ! -f "$(CONFIG_FILE)" ] && sudo mkdir -p $(CONFIG_DIR) && sudo cp application.yml $(CONFIG_FILE) || true
+
+start: configure
 	@ export $$(cat .env | xargs) && ./mvnw spring-boot:run
 
 start-db:
